@@ -20,6 +20,8 @@ def post_new(request):
             post = form.save(commit=False)
             post.author = request.user
             post.published_date = timezone.now()
+            post.game = form.save(commit=False)
+            post.gamepublisher = form.save(commit=False)
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
@@ -34,6 +36,9 @@ def post_edit(request, pk):
             post = form.save(commit=False)
             post.author = request.user
             post.published_date = timezone.now()
+            post.game = form.save(commit=False)
+            post.gamepublisher = form.save(commit=False)
+            post.genre = form.save(commit=False)
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:

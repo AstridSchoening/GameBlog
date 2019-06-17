@@ -9,6 +9,9 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    game = models.CharField(max_length=200, default=' ')
+    gamepublisher = models.CharField(max_length=200, default=' ')
+    genre = models.CharField(max_length=200, default=' ')
 
     def publish(self):
         self.published_date = timezone.now()

@@ -11,6 +11,10 @@
      <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
         <h2>{{ post.title }}</h2>
+        <p> GAME {{ post.game|linebreaksbr }}</p>
         <p>{{ post.text|linebreaksbr }}</p>
+        <p>{{ post.gamepublisher|linebreaksbr }}</p>
+        <p>{{ post.genre|linebreaksbr }}</p>
+        <p>{{ post.author|linebreaksbr }}</p>
     </div>
 {% endblock %}
