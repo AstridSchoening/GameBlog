@@ -1,0 +1,7 @@
+*.pyc
+*~
+__pycache__
+myvenv
+game_old
+db.sqlite3
+.DS_Store
