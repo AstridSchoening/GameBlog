@@ -7,8 +7,12 @@
                 {{ post.published_date }}
             </div>
             <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
-            <p> GAME {{ post.game|linebreaksbr }}</p>
+           <p> Game: {{ post.game|linebreaksbr }}</p> 
+           <p> Genre: {{ post.genre|linebreaksbr }}</p> 
+           <p> Gamepublisher: {{ post.gamepublisher|linebreaksbr }}</p> 
+           <p> Autor: {{ post.author|linebreaksbr }}</p> 
+           <p>{{ post.text|linebreaksbr }}</p>
+            
         </div>
     {% endfor %}
 {% endblock %}
