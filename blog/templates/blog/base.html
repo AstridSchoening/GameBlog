@@ -14,6 +14,21 @@
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             <h1><a href="/">Gamers Paradise</a></h1>
         </div>
+        <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+           <div id="SamplePlayerDivID"></div>
+           <script type="text/javascript">
+           var options = {
+           width: 854,
+           height: 480,
+           channel: "lck",
+           };
+           var player = new Twitch.Player("SamplePlayerDivID", options);
+           player.setVolume(0.5);
+           </script>
+        <br>
+        <br>
+        <br>
+
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">

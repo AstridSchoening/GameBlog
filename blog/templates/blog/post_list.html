@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% for post in posts %}
+    {% for post in posts reversed %}
         <div class="post">
             <div class="date">
                 {{ post.published_date }}
