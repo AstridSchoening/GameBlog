@@ -1,6 +1,6 @@
 h1 a, h2 a {
     color:  rgb(47, 47, 209);
-    font-family: 'Saira Semi Condensed', sans-serif;
+    font-family: 'Russo One', sans-serif;
 }
 body {
     padding-left: 15px;
@@ -14,7 +14,7 @@ body {
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: white;
     font-size: 36pt;
-    
+    font-family: 'Black Ops One', cursive;
 }
 
 .content {
@@ -22,9 +22,11 @@ body {
 }
 
 h1, h2, h3, h4 {
+    font-family: 'Russo One', sans-serif;
+}
+p {
     font-family: 'Saira Semi Condensed', sans-serif;
 }
-
 .date {
     color: #828282;
 }
@@ -38,7 +40,7 @@ h1, h2, h3, h4 {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
+    color: white;
     float: right;
     font-size: 26pt;
     margin-right: 20px;
