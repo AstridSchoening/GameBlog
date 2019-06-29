@@ -1,0 +1,29 @@
+{% extends 'events/event_base.html' %}
+
+{% block content %}
+<script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+<div id="SamplePlayerDivID"></div>
+<script type="text/javascript">
+var options = {
+width: 854,
+height: 480,
+channel: "lck",
+};
+var player = new Twitch.Player("SamplePlayerDivID", options);
+player.setVolume(0.5);
+</script>
+<br>
+    {% for event in events reversed %}
+        <div class="event">
+            <div class="date">
+                {{ event.published_date }}
+            </div>
+            <h1><a href="{% url 'event_detail' pk=event.pk %}">{{ event.title }}</a></h1> 
+            
+           <p> Autor: {{ event.author|linebreaksbr }}</p> 
+           <p>{{ event.text|linebreaksbr }}</p>
+            
+        </div>
+        <br> <br>
+    {% endfor %}
+{% endblock %}

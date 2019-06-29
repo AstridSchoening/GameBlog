@@ -1,0 +1,9 @@
+{% extends 'events/event_base.html' %}
+
+{% block content %}
+    <h2>New event</h2>
+    <form method="POST" class="event-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
