@@ -1,6 +1,8 @@
 {% extends 'events/event_base.html' %}
 
 {% block content %}
+<div class="col-lg-36">
+<h3>Stream</h3>
 <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
 <div id="SamplePlayerDivID"></div>
 <script type="text/javascript">
@@ -12,6 +14,7 @@ channel: "lck",
 var player = new Twitch.Player("SamplePlayerDivID", options);
 player.setVolume(0.5);
 </script>
+</div>
 <br>
     {% for event in events reversed %}
         <div class="event">

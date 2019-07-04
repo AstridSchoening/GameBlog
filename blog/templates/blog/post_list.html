@@ -1,33 +1,55 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<h1><a href="{% url 'event_list' %}">Zu den Events</a></h1>
-<br>
+<div class="row">
+    <div class="col-md-6">
+        <h2>Blogposts</h2>
         <br>
-<script src= "https://player.twitch.tv/js/embed/v1.js"></script>
-           <div id="SamplePlayerDivID"></div>
-           <script type="text/javascript">
-           var options = {
-           width: 854,
-           height: 480,
-           channel: "lck",
-           };
-           var player = new Twitch.Player("SamplePlayerDivID", options);
-           player.setVolume(0.5);
-           </script>
-           <br>
-    {% for post in posts reversed %}
-        <div class="post">
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-           <p> Game: {{ post.game|linebreaksbr }}</p> 
-           <p> Genre: {{ post.genre|linebreaksbr }}</p> 
-           <p> Gamepublisher: {{ post.gamepublisher|linebreaksbr }}</p> 
-           <p> Autor: {{ post.author|linebreaksbr }}</p> 
-           <p>{{ post.text|linebreaksbr }}</p>
+        <br>
+        <br>
+
+
+        {% for post in posts reversed %}
+        <div class="bg-warning"> 
+            <div class="post">
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+                <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p> Game: {{ post.game|linebreaksbr }}</p> 
+            <p> Genre: {{ post.genre|linebreaksbr }}</p> 
+            <p> Gamepublisher: {{ post.gamepublisher|linebreaksbr }}</p> 
+            <p> Autor: {{ post.author|linebreaksbr }}</p> 
+            <p>{{ post.text|linebreaksbr }}</p>
             
+            </div>
+        </div> 
+
+        {% endfor %}
+    </div>
+    <br>
+    <br>
+    <div class="col-md-5">
+        <button type="button" class="btn btn-primary"><h4><a href="{% url 'event_list' %}">Hier geht's zu den Events</a></h4></button>
+        <br>
+        <br>
+    </div>
+    
+        <div class="col-md-2 col-md-offset-2">
+            <h3>Stream</h3>
+            <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+                <div id="SamplePlayerDivID"></div>
+                <script type="text/javascript">
+                var options = {
+                width: 454,
+                height: 280,
+                channel: "lck",
+                };
+                var player = new Twitch.Player("SamplePlayerDivID", options);
+                player.setVolume(0.5);
+                </script>
+                <br>
+                </div>
         </div>
-    {% endfor %}
+</div>
 {% endblock %}

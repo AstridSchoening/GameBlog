@@ -7,7 +7,6 @@
         <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap" rel="stylesheet">
-        
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
@@ -22,7 +21,9 @@
                                         <h1><a href="/">Gamers Paradise</a></h1>
                                     </div>
                                    <div class="col-md-2">
+                                        {% if user.is_authenticated %}
                                         <h1><a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-pushpin"></span></a></h1>
+                                        {% endif %}
                                     </div> 
                                     
                             </div>
