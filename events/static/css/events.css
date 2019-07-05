@@ -19,7 +19,7 @@ body {
     background-color: grey;
 }
 .page-header {
-    background-color: rgb(147, 52, 167);
+    background-color: rgb(147, 52, 167);;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
     
@@ -42,6 +42,7 @@ h3 a  {
 
 h1, h2, h3, h4 {
     font-family: 'Russo One', sans-serif;
+    color:white;
 }
 p {
     font-family: 'Saira Semi Condensed', sans-serif;
@@ -69,6 +70,10 @@ p {
     margin-bottom: 70px;
 }
 
-.event h2 a, .post h2 a:visited {
+.event h2 a, .event h2 a:visited {
+    padding: 10px;
     color: #000000;
+}
+.bg-warning {
+    margin-left: 10px;
 }

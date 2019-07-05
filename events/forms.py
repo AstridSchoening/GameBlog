@@ -5,4 +5,5 @@ class EventForm(forms.ModelForm):
 
     class Meta:
          model = Event
-         fields = ('title', 'text', 'author')
+         fields = ('zeitpunkt', 'title',  'author','text')
+         widgets = { 'zeitpunkt': forms.DateTimeInput(attrs={'class': 'datetime-input'}) }

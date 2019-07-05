@@ -5,4 +5,5 @@ class PostForm(forms.ModelForm):
 
     class Meta:
          model = Post
-         fields = ('title', 'text','game', 'author', 'gamepublisher', 'genre')
+         fields = ('title', 'author','game',  'gamepublisher','genre','text')
+       

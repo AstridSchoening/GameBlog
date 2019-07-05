@@ -1,9 +1,27 @@
 {% extends 'events/event_base.html' %}
 
 {% block content %}
-    <h2>New event</h2>
-    <form method="POST" class="event-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
+<div class="container">
+        <div class="row">
+                <div class="col-md-10">
+                     <h2>New Event</h2>
+                <form method="POST" class="event-form">{% csrf_token %}
+                        <script>
+                                $(function () {
+                                    $('.datetime-input').datetimepicker({
+                                        format:'YYYY-MM-DD HH:mm:ss'
+                                    });
+                                });
+                            </script> 
+                            {{ form.as_p }}
+                    <button type="submit" class="save btn btn-default">Save</button>
+                </form>   
+                </div>
+               
+                <div class="col-md-2">
+                    <h1><a href="{% url 'event_list' %}" class="top-menu"><span class="glyphicon glyphicon-remove"></span></a></h1>
+                </div>
+                
+        </div>
+        </div>
 {% endblock %}

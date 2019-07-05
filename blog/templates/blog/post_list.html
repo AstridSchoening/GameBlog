@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row">
     <div class="col-md-6">
-        <h2>Blogposts</h2>
+        <h1>Blogposts</h1>
         <br>
         <br>
         <br>
@@ -22,9 +22,11 @@
             <p> Autor: {{ post.author|linebreaksbr }}</p> 
             <p>{{ post.text|linebreaksbr }}</p>
             
+            
             </div>
         </div> 
-
+        <br>
+        <br>
         {% endfor %}
     </div>
     <br>

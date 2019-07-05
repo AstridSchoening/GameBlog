@@ -4,9 +4,11 @@ from .models import Event
 from django.shortcuts import render, get_object_or_404
 from .forms import EventForm
 from django.shortcuts import redirect
+from datetime import datetime
 
 def event_list(request):
     events = Event.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    events = Event.objects.filter(zeitpunkt__gte=datetime.today())
     return render(request, 'events/event_list.html', {'events': events})
 
 def event_detail(request, pk):
@@ -14,13 +16,13 @@ def event_detail(request, pk):
     return render(request, 'events/event_detail.html', {'event': event})
 
 def event_new(request):
+    
     if request.method == "POST":
         form = EventForm(request.POST)
         if form.is_valid():
             event = form.save(commit=False)
             event.author = request.user
             event.published_date = timezone.now()
-            
             event.save()
             return redirect('event_detail', pk=event.pk)
     else:

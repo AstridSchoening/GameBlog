@@ -12,7 +12,7 @@ class Post(models.Model):
     game = models.CharField(max_length=200, default=' ')
     gamepublisher = models.CharField(max_length=200, default=' ')
     genre = models.CharField(max_length=200, default=' ')
-
+    
     def publish(self):
         self.published_date = timezone.now()
         self.save()
