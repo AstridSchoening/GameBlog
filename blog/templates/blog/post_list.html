@@ -82,6 +82,7 @@
                             <p> Gamepublisher: {{ post.gamepublisher|linebreaksbr }}</p> 
                             <p> Author: {{ post.author|linebreaksbr }}</p> 
                             <p>{{ post.text|linebreaksbr }}</p>
+                            <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{post.comments.count}}</a>
                             
                             
                             </div>
