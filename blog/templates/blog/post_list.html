@@ -2,44 +2,17 @@
 
 {% block content %}
 <div class="row">
-    <div class="col-md-6">
-        <h1>Blogposts</h1>
+    
+       
+    <div class="col-md-7">
         <br>
-        <br>
-        <br>
-
-
-        {% for post in posts reversed %}
-        <div class="bg-warning"> 
-            <div class="post">
-                <div class="date">
-                    {{ post.published_date }}
-                </div>
-                <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p> Game: {{ post.game|linebreaksbr }}</p> 
-            <p> Genre: {{ post.genre|linebreaksbr }}</p> 
-            <p> Gamepublisher: {{ post.gamepublisher|linebreaksbr }}</p> 
-            <p> Autor: {{ post.author|linebreaksbr }}</p> 
-            <p>{{ post.text|linebreaksbr }}</p>
-            <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
-            
-            
-            </div>
-        </div> 
-        <br>
-        <br>
-        {% endfor %}
-    </div>
-    <br>
-    <br>
-    <div class="col-md-5">
         <button type="button" class="btn btn-primary"><h4><a href="{% url 'event_list' %}">Hier geht's zu den Events</a></h4></button>
         <br>
         <br>
-    </div>
-    
-        <div class="col-md-2 col-md-offset-2">
-            <h3>Stream</h3>
+        <div class="row">
+
+            <div class="col-md-5 col-md-offset-2">
+            <h3>Our Sponsor</h3>
             <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
                 <div id="SamplePlayerDivID"></div>
                 <script type="text/javascript">
@@ -51,8 +24,72 @@
                 var player = new Twitch.Player("SamplePlayerDivID", options);
                 player.setVolume(0.5);
                 </script>
-                <br>
+                
+                <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+                <div id="SamplePlayerDivID"></div>
+                <script type="text/javascript">
+                var options = {
+                width: 454,
+                height: 280,
+                channel: "NoWay4u_Sir",
+                };
+                var player = new Twitch.Player("SamplePlayerDivID", options);
+                player.setVolume(0.5);
+                </script>
+                 <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+                 <div id="SamplePlayerDivID"></div>
+                 <script type="text/javascript">
+                 var options = {
+                 width: 454,
+                 height: 280,
+                 channel: "Dathrix",
+                 };
+                 var player = new Twitch.Player("SamplePlayerDivID", options);
+                 player.setVolume(0.5);
+                 </script>
+                  <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+                  <div id="SamplePlayerDivID"></div>
+                  <script type="text/javascript">
+                  var options = {
+                  width: 454,
+                  height: 280,
+                  channel: "Harmii",
+                  };
+                  var player = new Twitch.Player("SamplePlayerDivID", options);
+                  player.setVolume(0.5);
+                  </script>
                 </div>
         </div>
-</div>
+    </div>
+    
+        
+                <div class="col-md-5">
+                        <h1>Blogposts</h1>
+                        <br>
+                        <br>
+                        <br>
+                
+                
+                        {% for post in posts reversed %}
+                        <div class="bg-warning"> 
+                            <div class="post">
+                                <div class="date">
+                                    {{ post.published_date }}
+                                </div>
+                                <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                            <p> Game: {{ post.game|linebreaksbr }}</p> 
+                            <p> Genre: {{ post.genre|linebreaksbr }}</p> 
+                            <p> Gamepublisher: {{ post.gamepublisher|linebreaksbr }}</p> 
+                            <p> Author: {{ post.author|linebreaksbr }}</p> 
+                            <p>{{ post.text|linebreaksbr }}</p>
+                            
+                            
+                            </div>
+                        </div> 
+                        <br>
+                        <br>
+                        {% endfor %}
+                    </div>
+        </div>
+
 {% endblock %}
