@@ -17,6 +17,7 @@ h4 a  {
 body {
     padding-left: 20px;
     background-color:rgb(206, 202, 202);
+    font-size: 11pt;
 }
 .page-header {
     background-color: rgb(147, 52, 167);;
@@ -36,13 +37,16 @@ h3 a  {
     font-family: 'Black Ops One', cursive;
 }
 
-.content {
-    margin-left: 40px;
-}
 
-h1, h2, h3, h4 {
+h1 {
     font-family: 'Russo One', sans-serif;
-    color: black;
+    color:black;
+    font-size: 24pt;
+}
+h2, h3, h4 {
+    font-family: 'Russo One', sans-serif;
+    color:black;
+    font-size: 19pt;
 }
 p {
     font-family: 'Saira Semi Condensed', sans-serif;
@@ -54,7 +58,7 @@ p {
 .save {
     float: right;
 
-
+}
 .event-form textarea, .event-form input {
     width: 100%;
 }

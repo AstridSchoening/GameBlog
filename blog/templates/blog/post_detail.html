@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container">
 <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-9">
         <div class="post">
             {% if post.published_date %}
                 <div class="date">
@@ -12,8 +12,9 @@
             {% endif %}
             {% if user.is_authenticated %}
         <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <br>
             {% endif %}
-            <h1><a>{{ post.title }}</a></h1>
+            <h2><a>{{ post.title }}</a></h2>
             <p> Game: {{ post.game|linebreaksbr }}</p> 
             <p> Genre: {{ post.genre|linebreaksbr }}</p> 
             <p> Gamepublisher: {{ post.gamepublisher|linebreaksbr }}</p> 
@@ -28,10 +29,12 @@
     </div>
         <hr>
         <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+        <br><br>
     {% for comment in post.comments.all %}
         <div class="comment">
             <strong>{{ comment.author }}</strong>
             <p>{{ comment.text|linebreaks }}</p>
+            <br>
         </div>
     {% empty %}
     <p>Keine Kommentare</p>
